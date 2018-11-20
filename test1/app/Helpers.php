@@ -5,7 +5,7 @@ namespace App;
 class Helpers
 {
     /**
-     * Find corresponding closing parenthesis index by given open pran index.
+     * Find corresponding closing parenthesis index by given open parenthesis index.
      *
      * @param  $openParenIndex
      * @param  $string
@@ -13,7 +13,8 @@ class Helpers
      */
     public function findCorrespondingClosingParenthesis($openParenthesisIndex, $string)
     {
-        if ($string[$openParenthesisIndex] != "(") {
+        // validate open parenthesis index
+        if (($openParenthesisIndex > strlen($string) - 1) || $string[$openParenthesisIndex] != "(") {
             throw new \Exception("Invaild open pran index.");
         }
 
@@ -21,6 +22,10 @@ class Helpers
         $counter = 1;
 
         while ($counter > 0) {
+            // throw exception if reach end of string without finding the corresponding closing parenthesis.
+            if ($closeParenthesisIndex > strlen($string) - 2) {
+                throw new \Exception("Invaild string.");
+            }
             $character = $string[++$closeParenthesisIndex];
             if ($character == '(') {
                 $counter++;

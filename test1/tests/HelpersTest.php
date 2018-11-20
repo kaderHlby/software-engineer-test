@@ -20,20 +20,6 @@ class HelpersTest extends TestCase
     /**
      * @test
      */
-    public function shouldThrowExceptionWhenGivingInvalidOpenParanIndex()
-    {
-        $this->expectException(\Exception::class);
-
-        $string = "a (b c (d e (f) g) h) i (j k)";
-
-        $openParenthesisIndex = 0;
-
-        $this->helpers->findCorrespondingClosingParenthesis($openParenthesisIndex, $string);
-    }
-
-    /**
-     * @test
-     */
     public function canfindCorrespondingClosingParenthesis()
     {
         $string = "a (b c (d e (f) g) h) i (j k)";
@@ -67,4 +53,47 @@ class HelpersTest extends TestCase
 
         $this->assertEquals($closeParenIndex, 28);
     }
-}   
+
+    /**
+     * @test
+     */
+    public function should_throw_exception_when_giving_invalid_open_parenthesis_index()
+    {
+        $this->expectException(\Exception::class);
+
+        $string = "a (b c (d e (f) g) h) i (j k)";
+
+        $openParenthesisIndex = 0;
+
+        $this->helpers->findCorrespondingClosingParenthesis($openParenthesisIndex, $string);
+    }
+
+    /** 
+     * @test
+     */
+    public function should_throw_exception_when_giving_invalid_string()
+    {
+        $this->expectException(\Exception::class);
+
+        $string = "a (b c (d e (f) g) h i (j k)";
+
+        $openParenthesisIndex = 2;
+
+        $this->helpers->findCorrespondingClosingParenthesis($openParenthesisIndex, $string);
+    }
+
+    /** 
+     * @test
+     */
+    public function should_throw_exception_when_giving_open_parenthesis_index_greater_than_string_length()
+    {
+        $this->expectException(\Exception::class);
+
+        $string = "a (b c (d e (f) g) h i (j k)";
+
+        $openParenthesisIndex = 30;
+
+        $this->helpers->findCorrespondingClosingParenthesis($openParenthesisIndex, $string);
+    }
+
+}
