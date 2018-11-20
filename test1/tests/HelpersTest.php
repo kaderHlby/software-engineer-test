@@ -20,7 +20,7 @@ class HelpersTest extends TestCase
     /**
      * @test
      */
-    public function canfindCorrespondingClosingParenthesis()
+    public function can_find_corresponding_closing_parenthesis()
     {
         $string = "a (b c (d e (f) g) h) i (j k)";
 
