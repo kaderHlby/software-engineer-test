@@ -15,7 +15,7 @@ class Helpers
     {
         // validate open parenthesis index
         if (($openParenthesisIndex > strlen($string) - 1) || $string[$openParenthesisIndex] != "(") {
-            throw new \Exception("Invaild open pran index.");
+            throw new \Exception("Invaild open parenthesis index.");
         }
 
         $closeParenthesisIndex = $openParenthesisIndex;
