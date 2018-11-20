@@ -27,31 +27,31 @@ class HelpersTest extends TestCase
         // test case one.
         $openParenthesisIndex = 2;
 
-        $closeParenIndex = $this->helpers->findCorrespondingClosingParenthesis($openParenthesisIndex, $string);
+        $closeParenthesisIndex = $this->helpers->findCorrespondingClosingParenthesis($openParenthesisIndex, $string);
 
-        $this->assertEquals($closeParenIndex, 20);
+        $this->assertEquals($closeParenthesisIndex, 20);
 
         // test case two.
         $openParenthesisIndex = 7;
 
-        $closeParenIndex = $this->helpers->findCorrespondingClosingParenthesis($openParenthesisIndex, $string);
+        $closeParenthesisIndex = $this->helpers->findCorrespondingClosingParenthesis($openParenthesisIndex, $string);
 
-        $this->assertEquals($closeParenIndex, 17);
+        $this->assertEquals($closeParenthesisIndex, 17);
         
 
         // test case three.
         $openParenthesisIndex = 12;
 
-        $closeParenIndex = $this->helpers->findCorrespondingClosingParenthesis($openParenthesisIndex, $string);
+        $closeParenthesisIndex = $this->helpers->findCorrespondingClosingParenthesis($openParenthesisIndex, $string);
 
-        $this->assertEquals($closeParenIndex, 14);
+        $this->assertEquals($closeParenthesisIndex, 14);
 
         // test case four.
         $openParenthesisIndex = 24;
 
-        $closeParenIndex = $this->helpers->findCorrespondingClosingParenthesis($openParenthesisIndex, $string);
+        $closeParenthesisIndex = $this->helpers->findCorrespondingClosingParenthesis($openParenthesisIndex, $string);
 
-        $this->assertEquals($closeParenIndex, 28);
+        $this->assertEquals($closeParenthesisIndex, 28);
     }
 
     /**
