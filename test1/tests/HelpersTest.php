@@ -26,44 +26,44 @@ class HelpersTest extends TestCase
 
         $string = "a (b c (d e (f) g) h) i (j k)";
 
-        $openParenIndex = 0;
+        $openParenthesisIndex = 0;
 
-        $this->helpers->findCorrespondingClosingParen($openParenIndex, $string);
+        $this->helpers->findCorrespondingClosingParenthesis($openParenthesisIndex, $string);
     }
 
     /**
      * @test
      */
-    public function canFindCorrespondingClosingParen()
+    public function canfindCorrespondingClosingParenthesis()
     {
         $string = "a (b c (d e (f) g) h) i (j k)";
 
         // test case one.
-        $openParenIndex = 2;
+        $openParenthesisIndex = 2;
 
-        $closeParenIndex = $this->helpers->findCorrespondingClosingParen($openParenIndex, $string);
+        $closeParenIndex = $this->helpers->findCorrespondingClosingParenthesis($openParenthesisIndex, $string);
 
         $this->assertEquals($closeParenIndex, 20);
 
         // test case two.
-        $openParenIndex = 7;
+        $openParenthesisIndex = 7;
 
-        $closeParenIndex = $this->helpers->findCorrespondingClosingParen($openParenIndex, $string);
+        $closeParenIndex = $this->helpers->findCorrespondingClosingParenthesis($openParenthesisIndex, $string);
 
         $this->assertEquals($closeParenIndex, 17);
         
 
         // test case three.
-        $openParenIndex = 12;
+        $openParenthesisIndex = 12;
 
-        $closeParenIndex = $this->helpers->findCorrespondingClosingParen($openParenIndex, $string);
+        $closeParenIndex = $this->helpers->findCorrespondingClosingParenthesis($openParenthesisIndex, $string);
 
         $this->assertEquals($closeParenIndex, 14);
 
         // test case four.
-        $openParenIndex = 24;
+        $openParenthesisIndex = 24;
 
-        $closeParenIndex = $this->helpers->findCorrespondingClosingParen($openParenIndex, $string);
+        $closeParenIndex = $this->helpers->findCorrespondingClosingParenthesis($openParenthesisIndex, $string);
 
         $this->assertEquals($closeParenIndex, 28);
     }
