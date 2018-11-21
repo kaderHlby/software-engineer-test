@@ -22,19 +22,6 @@ nameYourFunction("a (b c (d e (f) g) h) i (j k)", 2); // 2 here indicates the "(
 
 The function should return the index position of the ")" right after "h", in this case, the return value is 20.
 
-# Test 1 solution
-
-## installation
-
-``` bash
-cd test1 && composer install
-```
-
-## run test cases
-
-``` bash
-vendor/bin/phpunit tests/HelpersTest.php
-```
 
 # Test 2
 
@@ -69,19 +56,6 @@ Sample Output when validating `Type_B.xlsx`
 | --- | --- |
 | 3 | Missing value in Field_A, Field_B should not contain any space |
 
-# Test 2 solution
-
-## installation
-
-``` bash
-cd test2 && composer install
-```
-
-## run test cases
-
-``` bash
-vendor/bin/phpunit tests/ValidatorTest.php
-```
 ## Bonus
 
 It will be nice if new file type(`Type_C`) can be integrated by just adding `Type_C.js`
